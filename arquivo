@@ -1,0 +1,346 @@
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-08-16 08:38 Hora oficial do Brasil
+NSE: Loaded 154 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 08:38
+NSE Timing: About 48.00% done; ETC: 08:40 (0:00:36 remaining)
+Completed NSE at 08:39, 35.83s elapsed
+Initiating NSE at 08:39
+Completed NSE at 08:39, 0.00s elapsed
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Initiating SYN Stealth Scan at 08:39
+Scanning 10.68.102.125 [65535 ports]
+Discovered open port 443/tcp on 10.68.102.125
+Discovered open port 3389/tcp on 10.68.102.125
+Discovered open port 135/tcp on 10.68.102.125
+Discovered open port 139/tcp on 10.68.102.125
+Discovered open port 445/tcp on 10.68.102.125
+Discovered open port 3306/tcp on 10.68.102.125
+Discovered open port 80/tcp on 10.68.102.125
+Discovered open port 7680/tcp on 10.68.102.125
+Discovered open port 49666/tcp on 10.68.102.125
+Discovered open port 49667/tcp on 10.68.102.125
+Discovered open port 5040/tcp on 10.68.102.125
+Discovered open port 49669/tcp on 10.68.102.125
+Discovered open port 49664/tcp on 10.68.102.125
+Discovered open port 912/tcp on 10.68.102.125
+Discovered open port 49665/tcp on 10.68.102.125
+Discovered open port 49668/tcp on 10.68.102.125
+Discovered open port 81/tcp on 10.68.102.125
+Discovered open port 9524/tcp on 10.68.102.125
+Discovered open port 5401/tcp on 10.68.102.125
+Discovered open port 3307/tcp on 10.68.102.125
+Discovered open port 82/tcp on 10.68.102.125
+Discovered open port 902/tcp on 10.68.102.125
+Discovered open port 33060/tcp on 10.68.102.125
+Discovered open port 49680/tcp on 10.68.102.125
+Discovered open port 49684/tcp on 10.68.102.125
+Discovered open port 3308/tcp on 10.68.102.125
+Discovered open port 5432/tcp on 10.68.102.125
+Completed SYN Stealth Scan at 08:39, 6.32s elapsed (65535 total ports)
+Initiating Service scan at 08:39
+Scanning 27 services on 10.68.102.125
+Service scan Timing: About 62.96% done; ETC: 08:41 (0:00:31 remaining)
+Completed Service scan at 08:42, 156.27s elapsed (27 services on 1 host)
+Initiating OS detection (try #1) against 10.68.102.125
+Retrying OS detection (try #2) against 10.68.102.125
+NSE: Script scanning 10.68.102.125.
+Initiating NSE at 08:42
+Completed NSE at 08:45, 182.45s elapsed
+Initiating NSE at 08:45
+NSE: [ssl-ccs-injection] No response from server: Unknown TLS protocol version or content type
+Completed NSE at 08:45, 11.51s elapsed
+Nmap scan report for 10.68.102.125
+Host is up (0.00032s latency).
+Not shown: 65507 closed tcp ports (reset), 1 filtered tcp port (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT      STATE SERVICE         VERSION
+80/tcp    open  http            Apache httpd 2.4.51 ((Win64) PHP/7.4.26)
+| http-sql-injection: 
+|   Possible sqli for queries:
+|_    http://10.68.102.125:80/?phpinfo=-1%27%20OR%20sqlspider
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+|_http-trace: TRACE is enabled
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       http://ha.ckers.org/slowloris/
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-fileupload-exploiter: 
+|   
+|_    Couldn't find a file-type field.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+| vulners: 
+|   cpe:/a:apache:http_server:2.4.51: 
+|     	CVE-2022-31813	7.5	https://vulners.com/cve/CVE-2022-31813
+|     	CVE-2022-23943	7.5	https://vulners.com/cve/CVE-2022-23943
+|     	CVE-2022-22720	7.5	https://vulners.com/cve/CVE-2022-22720
+|     	CVE-2021-44790	7.5	https://vulners.com/cve/CVE-2021-44790
+|     	CVE-2022-22721	6.8	https://vulners.com/cve/CVE-2022-22721
+|     	CVE-2022-28615	6.4	https://vulners.com/cve/CVE-2022-28615
+|     	CVE-2021-44224	6.4	https://vulners.com/cve/CVE-2021-44224
+|     	CVE-2022-30556	5.0	https://vulners.com/cve/CVE-2022-30556
+|     	CVE-2022-30522	5.0	https://vulners.com/cve/CVE-2022-30522
+|     	CVE-2022-29404	5.0	https://vulners.com/cve/CVE-2022-29404
+|     	CVE-2022-28614	5.0	https://vulners.com/cve/CVE-2022-28614
+|     	CVE-2022-26377	5.0	https://vulners.com/cve/CVE-2022-26377
+|_    	CVE-2022-22719	5.0	https://vulners.com/cve/CVE-2022-22719
+| http-enum: 
+|   /phpmyadmin/: phpMyAdmin
+|   /icons/: Potentially interesting folder w/ directory listing
+|_  /index/: Potentially interesting folder
+|_http-server-header: Apache/2.4.51 (Win64) PHP/7.4.26
+81/tcp    open  http            Microsoft IIS httpd 10.0
+| http-aspnet-debug: 
+|_  status: DEBUG is enabled
+|_http-server-header: Microsoft-IIS/10.0
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+82/tcp    open  ssl/http        Microsoft IIS httpd 10.0
+| http-aspnet-debug: 
+|_  status: DEBUG is enabled
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       http://ha.ckers.org/slowloris/
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+135/tcp   open  msrpc           Microsoft Windows RPC
+139/tcp   open  netbios-ssn     Microsoft Windows netbios-ssn
+443/tcp   open  ssl/https       VMware Workstation SOAP API 15.5.7
+|_http-iis-webdav-vuln: WebDAV is DISABLED. Server is not currently vulnerable.
+| vmware-version: 
+|   Server version: VMware Workstation 15.5.7
+|   Build: 17171714
+|   Locale version: INTL  
+|   OS type: win32-x86
+|_  Product Line ID: ws
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 404 Not Found
+|     Date: Tue, 16 Aug 2022 11:39:54 GMT
+|     Connection: close
+|     Content-Security-Policy: block-all-mixed-content
+|     Content-Type: text/plain; charset=utf-8
+|     Strict-Transport-Security: max-age=31536000
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: DENY
+|     X-XSS-Protection: 1
+|     Content-Length: 0
+|   GetRequest: 
+|     HTTP/1.1 403 Forbidden
+|     Date: Tue, 16 Aug 2022 11:39:54 GMT
+|     Connection: close
+|     Content-Security-Policy: block-all-mixed-content
+|     Content-Type: text/plain; charset=utf-8
+|     Strict-Transport-Security: max-age=31536000
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: DENY
+|     X-XSS-Protection: 1
+|     Content-Length: 0
+|   HTTPOptions: 
+|     HTTP/1.1 501 Not Implemented
+|     Date: Tue, 16 Aug 2022 11:39:54 GMT
+|     Connection: close
+|     Content-Security-Policy: block-all-mixed-content
+|     Content-Type: text/plain; charset=utf-8
+|     Strict-Transport-Security: max-age=31536000
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: DENY
+|     X-XSS-Protection: 1
+|     Content-Length: 0
+|   RTSPRequest: 
+|     HTTP/1.1 400 Bad Request
+|     Date: Tue, 16 Aug 2022 11:40:04 GMT
+|     Connection: close
+|     Content-Type: text/html
+|     Content-Length: 50
+|     <HTML><BODY><H1>400 Bad Request</H1></BODY></HTML>
+|   SIPOptions: 
+|     HTTP/1.1 400 Bad Request
+|     Date: Tue, 16 Aug 2022 11:41:12 GMT
+|     Connection: close
+|     Content-Type: text/html
+|     Content-Length: 50
+|_    <HTML><BODY><H1>400 Bad Request</H1></BODY></HTML>
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+445/tcp   open  microsoft-ds?
+902/tcp   open  ssl/vmware-auth VMware Authentication Daemon 1.10 (Uses VNC, SOAP)
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+912/tcp   open  vmware-auth     VMware Authentication Daemon 1.0 (Uses VNC, SOAP)
+3306/tcp  open  mysql           MySQL (unauthorized)
+|_mysql-vuln-cve2012-2122: ERROR: Script execution failed (use -d to debug)
+3307/tcp  open  opsession-prxy?
+| fingerprint-strings: 
+|   NULL: 
+|_    Host '10.68.102.125' is not allowed to connect to this MariaDB server
+3308/tcp  open  mysql           MySQL 8.0.27
+3389/tcp  open  ms-wbt-server   Microsoft Terminal Services
+5040/tcp  open  unknown
+5401/tcp  open  excerpts?
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP, FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, Help, JavaRMI, LDAPBindReq, LPDString, NULL, NotesRPC, RPCCheck, RTSPRequest, SIPOptions, SSLSessionReq, TLSSessionReq, TerminalServer, TerminalServerCookie, X11Probe: 
+|_    LAB1WS8
+5432/tcp  open  postgresql      PostgreSQL DB 9.6.0 or later
+7680/tcp  open  pando-pub?
+9524/tcp  open  ssl/http        Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+| http-phpmyadmin-dir-traversal: 
+|   VULNERABLE:
+|   phpMyAdmin grab_globals.lib.php subform Parameter Traversal Local File Inclusion
+|     State: UNKNOWN (unable to test)
+|     IDs:  CVE:CVE-2005-3299
+|       PHP file inclusion vulnerability in grab_globals.lib.php in phpMyAdmin 2.6.4 and 2.6.4-pl1 allows remote attackers to include local files via the $__redirect parameter, possibly involving the subform array.
+|       
+|     Disclosure date: 2005-10-nil
+|     Extra information:
+|       ../../../../../etc/passwd :
+|   
+|     References:
+|       http://www.exploit-db.com/exploits/1244/
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3299
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-vuln-cve2013-7091: ERROR: Script execution failed (use -d to debug)
+|_http-majordomo2-dir-traversal: ERROR: Script execution failed (use -d to debug)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+33060/tcp open  mysqlx?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, LDAPSearchReq, NotesRPC, SSLSessionReq, TLSSessionReq, X11Probe, afp: 
+|     Invalid message"
+|     HY000
+|   LDAPBindReq: 
+|     *Parse error unserializing protobuf message"
+|     HY000
+|   oracle-tns: 
+|     Invalid message-frame."
+|_    HY000
+49664/tcp open  msrpc           Microsoft Windows RPC
+49665/tcp open  msrpc           Microsoft Windows RPC
+49666/tcp open  msrpc           Microsoft Windows RPC
+49667/tcp open  msrpc           Microsoft Windows RPC
+49668/tcp open  msrpc           Microsoft Windows RPC
+49669/tcp open  msrpc           Microsoft Windows RPC
+49680/tcp open  unknown
+49684/tcp open  msrpc           Microsoft Windows RPC
+3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port3307-TCP:V=7.92%I=7%D=8/16%Time=62FB81FD%P=i686-pc-windows-windows%
+SF:r(NULL,4C,"H\0\0\x01\xffj\x04Host\x20'10\.68\.102\.125'\x20is\x20not\x2
+SF:0allowed\x20to\x20connect\x20to\x20this\x20MariaDB\x20server");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port5401-TCP:V=7.92%I=7%D=8/16%Time=62FB8203%P=i686-pc-windows-windows%
+SF:r(NULL,22,"\x20\0\x02\0LAB1WS8\0\xfe\xff\xff\xff\xa4\xf7\|\x02\0\0\x01\
+SF:0\x01\0\0\0\0\0\0\x03\0\x01")%r(GenericLines,22,"\x20\0\x02\0LAB1WS8\0\
+SF:xfe\xff\xff\xff\xa4\xf7\|\x02\0\0\x01\0\x01\0\0\0\0\0\0\x03\0\x01")%r(G
+SF:etRequest,22,"\x20\0\x02\0LAB1WS8\0\xfe\xff\xff\xff\xa4\xf7\|\x02\0\0\x
+SF:01\0\x01\0\0\0\0\0\0\x03\0\x01")%r(HTTPOptions,22,"\x20\0\x02\0LAB1WS8\
+SF:0\xfe\xff\xff\xff\xa4\xf7\|\x02\0\0\x01\0\x01\0\0\0\0\0\0\x03\0\x01")%r
+SF:(RTSPRequest,22,"\x20\0\x02\0LAB1WS8\0\xfe\xff\xff\xff\xa4\xf7\|\x02\0\
+SF:0\x01\0\x01\0\0\0\0\0\0\x03\0\x01")%r(RPCCheck,22,"\x20\0\x02\0LAB1WS8\
+SF:0\xfe\xff\xff\xff\xa4\xf7\|\x02\0\0\x01\0\x01\0\0\0\0\0\0\x03\0\x01")%r
+SF:(DNSVersionBindReqTCP,22,"\x20\0\x02\0LAB1WS8\0\xfe\xff\xff\xff\xa4\xf7
+SF:\|\x02\0\0\x01\0\x01\0\0\0\0\0\0\x03\0\x01")%r(Help,22,"\x20\0\x02\0LAB
+SF:1WS8\0\xfe\xff\xff\xff\xa4\xf7\|\x02\0\0\x01\0\x01\0\0\0\0\0\0\x03\0\x0
+SF:1")%r(SSLSessionReq,22,"\x20\0\x02\0LAB1WS8\0\xfe\xff\xff\xff\xa4\xf7\|
+SF:\x02\0\0\x01\0\x01\0\0\0\0\0\0\x03\0\x01")%r(TerminalServerCookie,22,"\
+SF:x20\0\x02\0LAB1WS8\0\xfe\xff\xff\xff\xa4\xf7\|\x02\0\0\x01\0\x01\0\0\0\
+SF:0\0\0\x03\0\x01")%r(TLSSessionReq,22,"\x20\0\x02\0LAB1WS8\0\xfe\xff\xff
+SF:\xff\xa4\xf7\|\x02\0\0\x01\0\x01\0\0\0\0\0\0\x03\0\x01")%r(X11Probe,22,
+SF:"\x20\0\x02\0LAB1WS8\0\xfe\xff\xff\xff\xa4\xf7\|\x02\0\0\x01\0\x01\0\0\
+SF:0\0\0\0\x03\0\x01")%r(FourOhFourRequest,22,"\x20\0\x02\0LAB1WS8\0\xfe\x
+SF:ff\xff\xff\xa4\xf7\|\x02\0\0\x01\0\x01\0\0\0\0\0\0\x03\0\x01")%r(LPDStr
+SF:ing,22,"\x20\0\x02\0LAB1WS8\0\xfe\xff\xff\xff\xa4\xf7\|\x02\0\0\x02\0\x
+SF:01\0\0\0\0\0\0\x03\0\x01")%r(LDAPBindReq,22,"\x20\0\x02\0LAB1WS8\0\xfe\
+SF:xff\xff\xff\xa4\xf7\|\x02\0\0\x03\0\x01\0\0\0\0\0\0\x03\0\x01")%r(SIPOp
+SF:tions,22,"\x20\0\x02\0LAB1WS8\0\xfe\xff\xff\xff\xa4\xf7\|\x02\0\0\x03\0
+SF:\x01\0\0\0\0\0\0\x03\0\x01")%r(TerminalServer,22,"\x20\0\x02\0LAB1WS8\0
+SF:\xfe\xff\xff\xff\xa4\xf7\|\x02\0\0\x03\0\x01\0\0\0\0\0\0\x03\0\x01")%r(
+SF:NotesRPC,22,"\x20\0\x02\0LAB1WS8\0\xfe\xff\xff\xff\xa4\xf7\|\x02\0\0\x0
+SF:2\0\x01\0\0\0\0\0\0\x03\0\x01")%r(JavaRMI,22,"\x20\0\x02\0LAB1WS8\0\xfe
+SF:\xff\xff\xff\xa4\xf7\|\x02\0\0\x02\0\x01\0\0\0\0\0\0\x03\0\x01");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port33060-TCP:V=7.92%I=7%D=8/16%Time=62FB8203%P=i686-pc-windows-windows
+SF:%r(NULL,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(GenericLines,9,"\x05\0\0\0\
+SF:x0b\x08\x05\x1a\0")%r(GetRequest,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(HT
+SF:TPOptions,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(RTSPRequest,9,"\x05\0\0\0
+SF:\x0b\x08\x05\x1a\0")%r(RPCCheck,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(DNS
+SF:VersionBindReqTCP,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(DNSStatusRequestT
+SF:CP,2B,"\x05\0\0\0\x0b\x08\x05\x1a\0\x1e\0\0\0\x01\x08\x01\x10\x88'\x1a\
+SF:x0fInvalid\x20message\"\x05HY000")%r(Help,9,"\x05\0\0\0\x0b\x08\x05\x1a
+SF:\0")%r(SSLSessionReq,2B,"\x05\0\0\0\x0b\x08\x05\x1a\0\x1e\0\0\0\x01\x08
+SF:\x01\x10\x88'\x1a\x0fInvalid\x20message\"\x05HY000")%r(TerminalServerCo
+SF:okie,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(TLSSessionReq,2B,"\x05\0\0\0\x
+SF:0b\x08\x05\x1a\0\x1e\0\0\0\x01\x08\x01\x10\x88'\x1a\x0fInvalid\x20messa
+SF:ge\"\x05HY000")%r(Kerberos,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(SMBProgN
+SF:eg,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(X11Probe,2B,"\x05\0\0\0\x0b\x08\
+SF:x05\x1a\0\x1e\0\0\0\x01\x08\x01\x10\x88'\x1a\x0fInvalid\x20message\"\x0
+SF:5HY000")%r(FourOhFourRequest,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(LPDStr
+SF:ing,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(LDAPSearchReq,2B,"\x05\0\0\0\x0
+SF:b\x08\x05\x1a\0\x1e\0\0\0\x01\x08\x01\x10\x88'\x1a\x0fInvalid\x20messag
+SF:e\"\x05HY000")%r(LDAPBindReq,46,"\x05\0\0\0\x0b\x08\x05\x1a\x009\0\0\0\
+SF:x01\x08\x01\x10\x88'\x1a\*Parse\x20error\x20unserializing\x20protobuf\x
+SF:20message\"\x05HY000")%r(SIPOptions,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r
+SF:(LANDesk-RC,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(TerminalServer,9,"\x05\
+SF:0\0\0\x0b\x08\x05\x1a\0")%r(NCP,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(Not
+SF:esRPC,2B,"\x05\0\0\0\x0b\x08\x05\x1a\0\x1e\0\0\0\x01\x08\x01\x10\x88'\x
+SF:1a\x0fInvalid\x20message\"\x05HY000")%r(JavaRMI,9,"\x05\0\0\0\x0b\x08\x
+SF:05\x1a\0")%r(WMSRequest,9,"\x05\0\0\0\x0b\x08\x05\x1a\0")%r(oracle-tns,
+SF:32,"\x05\0\0\0\x0b\x08\x05\x1a\0%\0\0\0\x01\x08\x01\x10\x88'\x1a\x16Inv
+SF:alid\x20message-frame\.\"\x05HY000")%r(ms-sql-s,9,"\x05\0\0\0\x0b\x08\x
+SF:05\x1a\0")%r(afp,2B,"\x05\0\0\0\x0b\x08\x05\x1a\0\x1e\0\0\0\x01\x08\x01
+SF:\x10\x88'\x1a\x0fInvalid\x20message\"\x05HY000");
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows 10|7|Longhorn|8.1|2008|Vista (99%)
+OS CPE: cpe:/o:microsoft:windows_10 cpe:/o:microsoft:windows_7::sp1 cpe:/o:microsoft:windows cpe:/o:microsoft:windows_8.1:r1 cpe:/o:microsoft:windows_server_2008:r2 cpe:/o:microsoft:windows_8 cpe:/o:microsoft:windows_vista::sp1
+Aggressive OS guesses: Microsoft Windows 10 1809 - 1909 (99%), Microsoft Windows 10 1709 - 1803 (95%), Microsoft Windows 10 1607 (93%), Microsoft Windows 10 1703 (93%), Microsoft Windows 10 1709 - 1909 (93%), Microsoft Windows 7 SP1 (92%), Microsoft Windows Longhorn (92%), Microsoft Windows 10 1511 (91%), Microsoft Windows 7 or 8.1 R1 (91%), Microsoft Windows 10 (91%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 0 hops
+TCP Sequence Prediction: Difficulty=253 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows, cpe:/o:vmware:Workstation:15.5.7
+
+Host script results:
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+
+NSE: Script Post-scanning.
+Initiating NSE at 08:45
+Completed NSE at 08:45, 0.00s elapsed
+Initiating NSE at 08:45
+Completed NSE at 08:45, 0.00s elapsed
+Read data files from: C:\Program Files (x86)\Nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 415.75 seconds
+           Raw packets sent: 65568 (2.886MB) | Rcvd: 131173 (5.511MB)
